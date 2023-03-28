@@ -2,8 +2,8 @@ ENTITA'
 
 
 VideoGame 
--ID(int) PK
--Nome(varchar)
+-ID(int) PK unique 
+-Nome(varchar) Not Null
 -Trama(varchar)
 -DataRilascio(date)
 -SoftwareHouse(varchar)
@@ -12,40 +12,40 @@ VideoGame
 -ID_classificazione(smallint) FK
 
 SoftwareHouse
--ID(smallint) PK
--Nome(varchar)
--P.I.(varchar)
+-ID(smallint) PK unique
+-Nome(varchar) Not Null
+-P.I.(varchar) Not Null
 -Città(varchar)
 -Nazione(varchar)
 
 Piattaforma 
--ID(smallint) PK
--Nome(varchar)
+-ID(smallint) PK unique
+-Nome(varchar) Not Null
 
 Categoria 
--ID(smallint) PK 
--Nome(varchar)
+-ID(smallint) PK unique
+-Nome(varchar) Not Null
 
 Classificazione 
--ID(smallint) PK
--Nome(varchar)
+-ID(smallint) PK unique
+-Nome(varchar) Not Null
 
 Torneo 
--ID(int) PK
--Nome(varchar)
+-ID(int) PK unique
+-Nome(varchar) Not Null
 -Anno(year)
 -Città(varchar)
 -ID_videoGame(smallint) FK
 
 Giocatore 
--ID(int) PK
+-ID(int) PK unique
 -Nome(varchar)
 -Cognome(varchar)
--Nickname(varchar)
+-Nickname(varchar) Not Null
 -Città(varchar)
 
 Premio
--ID(smallint) PK
+-ID(smallint) PK unique
 -NomePremio(varchar)
 
 
@@ -53,12 +53,12 @@ RELAZIONI
 
 
 VideoGame_Piattaforma
--ID(int) PK
+-ID(int) PK 
 -ID_videoGame(int)
 -ID_piattaforma(int)
 
 Recensione(tabella ponte)
--ID(Int) PK
+-ID(Int) PK 
 -Titolo(varchar) 
 -Testo(text)
 -Rating(float)
@@ -66,7 +66,7 @@ Recensione(tabella ponte)
 -ID_giocatore(int)
 
 Premio_VideoGame
--ID(int) PK
+-ID(int) PK 
 -ID_premio(smallint)
 -ID_videoGame(int)
 
