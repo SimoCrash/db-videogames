@@ -1,0 +1,82 @@
+ENTITA'
+
+
+VideoGame 
+-ID(int) PK
+-Nome(char)
+-Trama(varchar)
+-DataRilascio(date)
+-SoftwareHouse(char)
+-ID_softwareHouse(smallint) FK
+-ID_categoria(smallint) FK
+-ID_classificazione(smallint) FK
+
+SoftwareHouse
+-ID(smallint) PK
+-Nome(char)
+-P.I.(char)
+-Città(char)
+-Nazione(char)
+
+Piattaforma 
+-ID(smallint) PK
+-Nome(char)
+
+Categoria 
+-ID(smallint) PK 
+-Nome(char)
+
+Classificazione 
+-ID(smallint) PK
+-Nome(char)
+
+Torneo 
+-ID(int) PK
+-Nome(char)
+-Anno(year)
+-Città(char)
+-ID_videoGame(smallint) FK
+
+Giocatore 
+-ID(int) PK
+-Nome(char)
+-Cognome(char)
+-Nickname(char)
+-Città(char)
+
+Premio
+-ID(smallint) PK
+-NomePremio(char)
+
+
+RELAZIONI
+
+
+VideoGame_Piattaforma
+-ID(int) PK
+-ID_videoGame(int)
+-ID_piattaforma(int)
+
+Recensione(tabella ponte)
+-ID(Int) PK
+-Titolo(char) 
+-Testo(text)
+-Rating(float)
+-ID_videogame(int) 
+-ID_giocatore(int)
+
+Premio_VideoGame
+-ID(int) PK
+-ID_premio(smallint)
+-ID_videoGame(int)
+
+Giocatore_Torneo
+-ID(int) PK
+-ID_giocatore(int)
+-ID_torneo(int)
+
+
+
+
+
+
